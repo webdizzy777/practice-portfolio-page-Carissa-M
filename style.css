@@ -3,36 +3,8 @@ body{
  background-color: #F7FFF7;
  padding: 20px;
  line-height: 1.5;
-  background-image: linear-gradient(to bottom right, #F7FFF7, #D8B6EB);
-}
-table, td, tr{
-    border: 1px solid;
-    text-align: left;
-    padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    border-color: #D8B6EB;
-    background-color: #F7FFF7;
-}
-
-h1{
-    text-align: center;
-}
-.centered{
-    text-align: center;
-    margin: auto;
-}
-input[type=text],[type=email]{
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-}
-textarea{
-  width: 60%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
+ background-image: linear-gradient(to bottom right, #F7FFF7, #D8B6EB);
+ 
 }
 
 button {
@@ -45,4 +17,85 @@ button {
   cursor: pointer;
   font-weight: bold;
   font-size: 1.3em;
+}
+
+h1{
+    text-align: center;
+}
+
+h3, h4, h5{
+  font-size: 1.17em;
+}
+
+input[type=text],[type=email]{
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+table, td, tr{
+    border: 1px solid;
+    text-align: left;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: #D8B6EB;
+    background-color: #F7FFF7;
+}
+
+textarea{
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.centered{
+    text-align: center;
+    margin: auto;
+}
+
+.container{
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.profilePic {
+  width: 25%;
+  max-width: 150px;
+  height: auto;
+}
+
+.contain {
+  display: block; /* forcing default for small screen divs */
+}
+
+.column {
+  width: 100%;
+  box-sizing: border-box; /*include padding in total width */
+  padding: 10px;
+}
+
+/* For screens that are bigger than 600 px we will make
+a container to flex the display with our divs side by side
+with a gap of 20px between. Flex-wrap will un-force div stacking 
+on small screens and wrap them to columns*/
+@media (min-width: 600px) {
+  .contain {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  /* 
+    Let each column grow equally (1 ratio) to fill available space. 
+    width: auto allows flex to determine column width.
+  */
+  .column {
+    flex: 1;
+    width: auto;
+  }
 }
